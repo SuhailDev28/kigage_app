@@ -1,0 +1,33 @@
+.recent-events-heading {
+  font-size: 38px;
+  font-weight: 700;
+}
+.recent-events-subheading {
+  font-size: 18px;
+  font-weight: 500;
+}
+.recentEvents-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.recentEvents-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+.recentEvents-tile {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.recentEvents-tile img {
+  border-radius: 15px;
+}
+
+@media (max-width: 1300px) {
+  .recentEvents-grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}

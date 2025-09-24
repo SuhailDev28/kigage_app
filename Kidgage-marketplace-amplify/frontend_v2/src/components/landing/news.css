@@ -1,0 +1,132 @@
+.landing-news-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.landing-news-header-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.landing-news-headings {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.landing-news-headings h5 {
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.landing-news-headings h6 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.landing-news-header-btn {
+  background-color: #acc29e;
+  width: 100px;
+  height: 50px;
+  border-radius: 0px 15px 0px 15px;
+  overflow: hidden;
+}
+
+.landing-news-header-btn a {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.landing-news-content-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.landing-news-card {
+  display: flex;
+  gap: 1rem;
+  flex-grow: 1;
+  flex-basis: calc(50% - 1rem);
+  /* background-color: #acc29e; */
+  border: 1px solid;
+  border-radius: 15px;
+  height: 260px;
+  padding: 10px;
+}
+
+.artical-image-container {
+  min-width: 190px;
+  height: 237.12px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.artical-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.artical-container {
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+  padding: 10px 0px;
+}
+
+.artical-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.artical-header h5 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.artical-header h6 {
+  font-weight: 600;
+}
+
+.artical-content {
+  height: 120px;
+  overflow: hidden;
+}
+
+.artical-content p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  font-size: 14px;
+  -webkit-box-orient: vertical;
+}
+
+/* mobile view */
+@media (max-width: 770px) {
+  .landing-news-content-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 490px) {
+  .landing-news-card {
+    flex-direction: column;
+  }
+
+  .artical-container {
+    gap: 1rem;
+  }
+
+  .artical-content p {
+    -webkit-line-clamp: 5;
+  }
+}
