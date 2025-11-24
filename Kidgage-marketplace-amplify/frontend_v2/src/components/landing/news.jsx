@@ -5,6 +5,7 @@ import { getlandingNewsApi } from "../../services/allApis";
 import demoImg2 from "../../assets/Screenshot 2024-11-10 at 10.14.51 PM 10 (1).png";
 import demoImg1 from "../../assets/newsimg.png";
 import { useNavigate } from "react-router";
+import API_BASE_URL from "../../../src/config";
 
 const News = () => {
   const [landingNewsData, setLandingNewsData] = useState([]);
@@ -41,7 +42,10 @@ const News = () => {
         {landingNewsData[0] && (
           <div className="landing-news-card" onClick={() => navigateToDetailedNews(landingNewsData[0]._id)}>
             <div className="artical-image-container">
-              <img src={landingNewsData[0].image} alt="image" />
+              <img
+                src={`${API_BASE_URL.replace("/api", "")}${landingNewsData[0].image}`}
+                alt="image"
+              />
             </div>
             <div className="artical-container">
               <div className="artical-header">
@@ -58,7 +62,11 @@ const News = () => {
         {landingNewsData[1] && (
           <div className="landing-news-card" onClick={() => navigateToDetailedNews(landingNewsData[1]._id)}>
             <div className="artical-image-container">
-              <img src={landingNewsData[1].image} alt="image" />
+              <img
+                src={`${API_BASE_URL.replace("/api", "")}${landingNewsData[1].image}`}
+                alt="image"
+              />
+              
             </div>
             <div className="artical-container">
               <div className="artical-header">

@@ -4,6 +4,7 @@ import { Link } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { getAllActivitesApi } from "../../services/allApis";
+import API_BASE_URL from "../../../src/config";
 
 const TopActivites = () => {
   const [activitesData, setActivitesData] = useState([]);
@@ -61,7 +62,10 @@ const TopActivites = () => {
                 key={activity._id}
                 className="card-box"
               >
-                <img src={activity.image} alt="activity-image" />
+                <img
+                  src={`${API_BASE_URL.replace("/api", "")}${activity.image}`}
+                  alt="activity-image"
+                />
                 <button className="card-box-btn">{activity.name}</button>
               </Link>
             ))

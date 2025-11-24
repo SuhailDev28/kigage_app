@@ -3,6 +3,7 @@ import Banner from "../../components/common/banner/banner";
 import Search from "../../components/common/search/search";
 import { getAllActivityByCategoryApi } from "../../services/allApis";
 import { Link, useParams } from "react-router";
+import API_BASE_URL from "../../../src/config";
 import "./Activity.css";
 import { fromAndToDateFormatter } from "../../utils/dateFormater";
 import { BookingCourseContext } from "../../context/bookingContext";
@@ -41,7 +42,7 @@ function ActivityPage() {
                 key={activity._id}
               >
                 <img
-                  src={activity.images[0]}
+                  src={`${API_BASE_URL.replace("/api", "")}${activity.images[0]}`}
                   className="img-fluid"
                   alt="Image 1"
                 />

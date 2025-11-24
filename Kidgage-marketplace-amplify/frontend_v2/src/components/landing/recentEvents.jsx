@@ -3,6 +3,7 @@ import "./recentEvents.css";
 import { getAllRecentEventsApi } from "../../services/allApis";
 import { dateFormater } from "../../utils/dateFormater";
 import { Link, useNavigate } from "react-router";
+import API_BASE_URL from "../../../src/config";
 
 const RecentEvents = () => {
   const [recentEvents, setRecentEvents] = useState([]);
@@ -41,7 +42,7 @@ const RecentEvents = () => {
                 key={recentEvent._id}
               >
                 <img
-                  src={recentEvent.image}
+                  src={`${API_BASE_URL.replace("/api", "")}${recentEvent.image}`}
                   className="img-fluid"
                   alt="event image"
                 // onClick={() => eventdetails(recentEvent._id)}

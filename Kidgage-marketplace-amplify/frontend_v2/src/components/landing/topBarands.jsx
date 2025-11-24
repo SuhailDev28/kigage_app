@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./topBrands.css";
 import { getAllTopBrandsApi } from "../../services/allApis";
+import API_BASE_URL from "../../../src/config";
 
 const TopBarands = () => {
   const [topBrands, setTopBrands] = useState([]);
@@ -28,7 +29,7 @@ const TopBarands = () => {
         {topBrands.length > 0 ? (
           topBrands.map((brand) => (
             <div className="topBrands-brand" key={brand._id}>
-              <img src={brand.logo} alt="brand-logo" />
+              <img src={`${API_BASE_URL.replace("/api", "")}${brand.logo}`} alt="brand-logo" />
             </div>
           ))
         ) : (
