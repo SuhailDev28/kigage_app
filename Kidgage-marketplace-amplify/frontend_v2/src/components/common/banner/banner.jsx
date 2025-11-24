@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./banner.css";
 import { getAllBannersApi } from "../../../services/allApis";
+import API_BASE_URL from "../../../config";
 
 const Banner = () => {
   const [bannerData, setBannerData] = useState({
@@ -41,7 +42,7 @@ const Banner = () => {
       {bannerData.isLoading ? (
         <p>Loading....</p>
       ) : bannerData.banners.length > 0 ? (
-        <img src={bannerData.banners[currentIndex].imageUrl} alt="" />
+        <img src={`${API_BASE_URL.replace("/api", "")}${bannerData.banners[currentIndex].imageUrl}`} alt="" />
       ) : (
         <p>no Banner</p>
       )}
