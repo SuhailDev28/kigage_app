@@ -4,6 +4,8 @@ import Search from "../../components/common/search/search";
 import { getAllActivityByCategoryApi } from "../../services/allApis";
 import { Link, useParams } from "react-router";
 import API_BASE_URL from "../../../src/config";
+
+
 import "./Activity.css";
 import { fromAndToDateFormatter } from "../../utils/dateFormater";
 import { BookingCourseContext } from "../../context/bookingContext";

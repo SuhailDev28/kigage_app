@@ -8,6 +8,7 @@ import {
 import "./detailedBlog.css";
 import { handleShare } from "../../utils/share";
 import { useNavigate } from "react-router";
+import API_BASE_URL from "../../../src/config";
 const Detailedblog = () => {
   const [newsDetails, setNewsDetails] = useState(null);
   const { newsId } = useParams();
@@ -59,7 +60,7 @@ const Detailedblog = () => {
     <div className="detailedblog-layout">
       <div className="detailedblog-left-container">
         <div className="detailed-blog-image">
-          <img src={newsDetails.image} alt="" />
+          <img  src={`${API_BASE_URL.replace("/api", "")}${newsDetails.image}`} alt="" />
         </div>
         {/* on small screen */}
         <div className="detailedblog-right-container-onSmallscreen">
@@ -136,7 +137,7 @@ const Detailedblog = () => {
             {otherNews.map((news) => (
               <div className="detailedblog-card" key={news._id} onClick={() => navigateToDetailedNews(news._id)}>
                 <div className="detailedblog-card-image">
-                  <img src={news.image} alt={news.title} />
+                  <img src={`${API_BASE_URL.replace("/api", "")}${news.image}`} alt={news.title} />
                 </div>
                 <div className="detailedblog-card-content">
                   <h3>{news.title}</h3>
